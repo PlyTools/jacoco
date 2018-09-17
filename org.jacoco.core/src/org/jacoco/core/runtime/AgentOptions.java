@@ -42,7 +42,7 @@ public final class AgentOptions {
 	/**
 	 * Default value for the "destfile" agent option.
 	 */
-	public static final String DEFAULT_DESTFILE = "jacoco.exec";
+	public static final String DEFAULT_DESTFILE = "/sdcard/tencent/NewMonkey/coverage.exec";
 
 	/**
 	 * Specifies whether execution data should be appended to the output file.
@@ -283,7 +283,7 @@ public final class AgentOptions {
 	 * @return <code>true</code>, when the output should be appended
 	 */
 	public boolean getAppend() {
-		return getOption(APPEND, true);
+		return getOption(APPEND, false);
 	}
 
 	/**
