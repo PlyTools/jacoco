@@ -27,7 +27,8 @@ public class CoverageServer {
     public static void main(String[] args) {
         try {
 
-            TServerSocket serverTransport = new TServerSocket(9090);
+            int port = Integer.parseInt(args[0]);
+            TServerSocket serverTransport = new TServerSocket(port);
             TBinaryProtocol.Factory proFactory = new TBinaryProtocol.Factory();
 
             /**
@@ -39,7 +40,7 @@ public class CoverageServer {
             serverArgs.processor(processor);
             serverArgs.protocolFactory(proFactory);
             TServer server = new TThreadPoolServer(serverArgs);
-            logger.info("Start server on port 9090...");
+            logger.info("Start server on port " + args[0] + "......");
 
             server.serve();
         } catch (TTransportException e) {
